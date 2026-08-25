@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MUPELA | High Fashion</title>
   
-  <!-- Embedded Styling & Fonts -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
@@ -54,6 +53,9 @@
       padding: 24px 6%;
       background: var(--bg-color);
       border-bottom: 1px solid rgba(26, 24, 23, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .navbar a {
@@ -61,13 +63,18 @@
       color: var(--text-dark);
       font-size: 0.75rem;
       font-weight: 500;
-      margin-right: 24px;
+      margin-right: 18px;
       letter-spacing: 0.12em;
       transition: color 0.2s ease;
     }
 
     .navbar a:hover {
       color: var(--accent-color);
+    }
+
+    .brand-logo a {
+      text-decoration: none;
+      color: var(--text-dark);
     }
 
     .brand-logo h1 {
@@ -124,27 +131,27 @@
       border-color: #FFFFFF;
     }
 
-    /* Product Grid */
-    .products {
-      padding: 100px 6%;
-    }
-
+    /* Section Typography */
     .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      text-align: center;
       margin-bottom: 50px;
     }
 
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    /* Curated Product Grid */
+    .products {
+      padding: 100px 6% 80px;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 40px;
     }
 
@@ -154,7 +161,7 @@
 
     .product-image-wrap {
       width: 100%;
-      height: 480px;
+      height: 460px;
       overflow: hidden;
       margin-bottom: 20px;
       background-color: var(--card-bg);
@@ -181,6 +188,62 @@
     .price {
       font-size: 0.85rem;
       color: var(--text-muted);
+    }
+
+    /* Category Portals Section */
+    .category-portals {
+      padding: 40px 6% 100px;
+    }
+
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .portal-card {
+      position: relative;
+      height: 480px;
+      display: block;
+      text-decoration: none;
+      overflow: hidden;
+      background-color: var(--card-bg);
+    }
+
+    .portal-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .portal-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .portal-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 24, 23, 0.8) 0%, rgba(26, 24, 23, 0.1) 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      color: #FFFFFF;
+    }
+
+    .portal-overlay h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .portal-overlay span {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      font-weight: 600;
+      text-transform: uppercase;
     }
 
     /* Footer */
@@ -212,12 +275,14 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-links">
-      <a href="#new">NEW ARRIVALS</a>
-      <a href="#collections">COLLECTIONS</a>
-      <a href="#house">THE HOUSE</a>
+      <a href="new-arrivals.html">NEW ARRIVALS</a>
+      <a href="collections.html">WOMEN</a>
+      <a href="collections.html">MEN</a>
+      <a href="collections.html">CHILDREN</a>
+      <a href="collections.html">BAGS & ACCESSORIES</a>
     </div>
     <div class="brand-logo">
-      <h1>MUPELA</h1>
+      <a href="index.html"><h1>MUPELA</h1></a>
     </div>
     <div class="nav-actions">
       <a href="#">SEARCH</a>
@@ -230,11 +295,11 @@
     <div class="hero-content">
       <h2>AUTUMN / WINTER '26</h2>
       <p>TAILORED PRECISION. BOLD CONFIDENCE.</p>
-      <a href="#shop" class="btn">EXPLORE COLLECTION</a>
+      <a href="new-arrivals.html" class="btn">EXPLORE COLLECTION</a>
     </div>
   </section>
 
-  <!-- Curated Collection -->
+  <!-- Curated Collection Preview -->
   <section class="products" id="shop">
     <div class="section-header">
       <h3 class="section-title">Curated Selection</h3>
@@ -252,19 +317,66 @@
 
       <div class="product-card">
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Statement Set">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop" alt="Men's Tailored Suit">
         </div>
-        <h4>STATEMENT TWO-PIECE</h4>
-        <p class="price">$420</p>
+        <h4>ARCHITECTURAL SUIT JACKET</h4>
+        <p class="price">$490</p>
       </div>
 
       <div class="product-card">
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop" alt="Tailored Trench">
+          <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800&auto=format&fit=crop" alt="Leather Tote Bag">
         </div>
-        <h4>EDITORIAL TAILORED TRENCH</h4>
-        <p class="price">$510</p>
+        <h4>STRUCTURED LEATHER TOTE</h4>
+        <p class="price">$310</p>
       </div>
+
+    </div>
+  </section>
+
+  <!-- Category Portals -->
+  <section class="category-portals">
+    <div class="section-header">
+      <h3 class="section-title">Explore The World of MUPELA</h3>
+    </div>
+
+    <div class="portal-grid">
+      
+      <!-- Women -->
+      <a href="collections.html" class="portal-card">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Women's Collection">
+        <div class="portal-overlay">
+          <h3>WOMEN</h3>
+          <span>DISCOVER LINE →</span>
+        </div>
+      </a>
+
+      <!-- Men -->
+      <a href="collections.html" class="portal-card">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop" alt="Men's Collection">
+        <div class="portal-overlay">
+          <h3>MEN</h3>
+          <span>DISCOVER LINE →</span>
+        </div>
+      </a>
+
+      <!-- Children -->
+      <a href="collections.html" class="portal-card">
+        <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?q=80&w=800&auto=format&fit=crop" alt="Children's Collection">
+        <div class="portal-overlay">
+          <h3>CHILDREN</h3>
+          <span>DISCOVER LINE →</span>
+        </div>
+      </a>
+
+      <!-- Bags & Accessories -->
+      <a href="collections.html" class="portal-card">
+        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800&auto=format&fit=crop" alt="Bags and Accessories">
+        <div class="portal-overlay">
+          <h3>BAGS & ACCESSORIES</h3>
+          <span>DISCOVER LINE →</span>
+        </div>
+      </a>
 
     </div>
   </section>
