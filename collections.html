@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUPELA | Collections</title>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-color: #FBF9F5;
+      --text-dark: #1A1817;
+      --text-muted: #6E6A66;
+      --accent-color: #C87D65;
+      --card-bg: #E8E2D9;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-color);
+      letter-spacing: 0.05em;
+    }
+
+    /* Announcement Bar */
+    .announcement-bar {
+      background: var(--text-dark);
+      color: var(--bg-color);
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+    }
+
+    .announcement-bar span {
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 6%;
+      background: var(--bg-color);
+      border-bottom: 1px solid rgba(26, 24, 23, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-right: 24px;
+      letter-spacing: 0.12em;
+      transition: color 0.2s ease;
+    }
+
+    .navbar a:hover, .navbar a.active {
+      color: var(--accent-color);
+    }
+
+    .brand-logo a {
+      text-decoration: none;
+      color: var(--text-dark);
+    }
+
+    .brand-logo h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+    }
+
+    /* Page Header */
+    .collection-header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .collection-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .collection-header p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Collections Grid Layout */
+    .collections-container {
+      padding: 0 6% 100px;
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .collections-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .collection-card {
+      position: relative;
+      height: 550px;
+      overflow: hidden;
+      background-color: var(--card-bg);
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+
+    .collection-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .collection-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .collection-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 24, 23, 0.75) 0%, rgba(26, 24, 23, 0.1) 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      transition: background 0.3s ease;
+    }
+
+    .collection-card:hover .collection-overlay {
+      background: linear-gradient(to top, rgba(26, 24, 23, 0.85) 0%, rgba(26, 24, 23, 0.2) 60%);
+    }
+
+    .collection-overlay h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .collection-overlay p {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      font-weight: 300;
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .explore-link {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      font-weight: 600;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .explore-link::after {
+      content: '→';
+      transition: transform 0.3s ease;
+    }
+
+    .collection-card:hover .explore-link::after {
+      transform: translateX(6px);
+    }
+
+    /* Footer */
+    footer {
+      padding: 60px 6%;
+      background: #121110;
+      color: var(--bg-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+
+    footer a {
+      color: var(--bg-color);
+      text-decoration: none;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p>COMPLIMENTARY INTERNATIONAL SHIPPING ON ORDERS OVER <span>$150</span></p>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="new-arrivals.html">NEW ARRIVALS</a>
+      <a href="collections.html" class="active">COLLECTIONS</a>
+      <a href="index.html#house">THE HOUSE</a>
+    </div>
+    <div class="brand-logo">
+      <a href="index.html"><h1>MUPELA</h1></a>
+    </div>
+    <div class="nav-actions">
+      <a href="#">SEARCH</a>
+      <a href="#">BAG (0)</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="collection-header">
+    <h2>THE COLLECTIONS</h2>
+    <p>EXPLORE CURATED SILHOUETTES CRAFTED FOR ELEVATED DAILY WEAR AND EVENING STATEMENTS.</p>
+  </header>
+
+  <!-- Collections Grid -->
+  <main class="collections-container">
+    <div class="collections-grid">
+
+      <!-- Category 1 -->
+      <a href="new-arrivals.html" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop" alt="Tailored Outerwear">
+        <div class="collection-overlay">
+          <h3>TAILORED OUTERWEAR</h3>
+          <p>STRUCTURED COATS, BLAZERS, AND ARCHITECTURAL TRENCHES.</p>
+          <span class="explore-link">DISCOVER LINE</span>
+        </div>
+      </a>
+
+      <!-- Category 2 -->
+      <a href="new-arrivals.html" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=1000&auto=format&fit=crop" alt="Statement Dresses">
+        <div class="collection-overlay">
+          <h3>STATEMENT DRESSES</h3>
+          <p>DRAPED SILKS, MINIMALIST CUTS, AND EVENING DRAPE.</p>
+          <span class="explore-link">DISCOVER LINE</span>
+        </div>
+      </a>
+
+      <!-- Category 3 -->
+      <a href="new-arrivals.html" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=1000&auto=format&fit=crop" alt="Matching Sets">
+        <div class="collection-overlay">
+          <h3>MATCHING SETS</h3>
+          <p>ELEVATED TWO-PIECE ENSEMBLES FOR EFFORTLESS STYLING.</p>
+          <span class="explore-link">DISCOVER LINE</span>
+        </div>
+      </a>
+
+      <!-- Category 4 -->
+      <a href="new-arrivals.html" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop" alt="The Runway Capsule">
+        <div class="collection-overlay">
+          <h3>AUTUMN / WINTER '26 CAPSULE</h3>
+          <p>LIMITED-RUN PIECES DEFINED BY HIGH-CONTRAST TAILORING.</p>
+          <span class="explore-link">DISCOVER LINE</span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 MUPELA. ALL RIGHTS RESERVED.</p>
+    <div>
+      <a href="#">INSTAGRAM</a>
+      <a href="#">PRIVACY</a>
+      <a href="#">TERMS</a>
+    </div>
+  </footer>
+
+</body>
+</html>
