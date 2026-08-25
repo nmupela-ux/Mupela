@@ -63,7 +63,7 @@
       color: var(--text-dark);
       font-size: 0.75rem;
       font-weight: 500;
-      margin-right: 24px;
+      margin-right: 18px;
       letter-spacing: 0.12em;
       transition: color 0.2s ease;
     }
@@ -112,23 +112,18 @@
 
     .collections-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-    }
-
-    @media (max-width: 768px) {
-      .collections-grid {
-        grid-template-columns: 1fr;
-      }
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
     }
 
     .collection-card {
       position: relative;
-      height: 550px;
+      height: 520px;
       overflow: hidden;
       background-color: var(--card-bg);
       text-decoration: none;
       color: #FFFFFF;
+      display: block;
     }
 
     .collection-card img {
@@ -145,32 +140,33 @@
     .collection-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(26, 24, 23, 0.75) 0%, rgba(26, 24, 23, 0.1) 60%);
+      background: linear-gradient(to top, rgba(26, 24, 23, 0.82) 0%, rgba(26, 24, 23, 0.1) 60%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 40px;
+      padding: 36px;
       transition: background 0.3s ease;
     }
 
     .collection-card:hover .collection-overlay {
-      background: linear-gradient(to top, rgba(26, 24, 23, 0.85) 0%, rgba(26, 24, 23, 0.2) 60%);
+      background: linear-gradient(to top, rgba(26, 24, 23, 0.9) 0%, rgba(26, 24, 23, 0.2) 60%);
     }
 
     .collection-overlay h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.2rem;
       font-weight: 400;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       letter-spacing: 0.05em;
     }
 
     .collection-overlay p {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
       font-weight: 300;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       color: rgba(255, 255, 255, 0.85);
+      line-height: 1.4;
     }
 
     .explore-link {
@@ -222,8 +218,10 @@
   <nav class="navbar">
     <div class="nav-links">
       <a href="new-arrivals.html">NEW ARRIVALS</a>
-      <a href="collections.html" class="active">COLLECTIONS</a>
-      <a href="index.html#house">THE HOUSE</a>
+      <a href="collections.html" class="active">WOMEN</a>
+      <a href="collections.html">MEN</a>
+      <a href="collections.html">CHILDREN</a>
+      <a href="collections.html">BAGS & ACCESSORIES</a>
     </div>
     <div class="brand-logo">
       <a href="index.html"><h1>MUPELA</h1></a>
@@ -237,49 +235,69 @@
   <!-- Header -->
   <header class="collection-header">
     <h2>THE COLLECTIONS</h2>
-    <p>EXPLORE CURATED SILHOUETTES CRAFTED FOR ELEVATED DAILY WEAR AND EVENING STATEMENTS.</p>
+    <p>EXPLORE ARCHITECTURAL CUTS, ELEVATED TAILORING, AND ESSENTIAL STATEMENT SILHOUETTES.</p>
   </header>
 
   <!-- Collections Grid -->
   <main class="collections-container">
     <div class="collections-grid">
 
-      <!-- Category 1 -->
+      <!-- Women -->
       <a href="new-arrivals.html" class="collection-card">
-        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop" alt="Tailored Outerwear">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop" alt="Women's Collection">
         <div class="collection-overlay">
-          <h3>TAILORED OUTERWEAR</h3>
-          <p>STRUCTURED COATS, BLAZERS, AND ARCHITECTURAL TRENCHES.</p>
+          <h3>WOMENSWEAR</h3>
+          <p>STRUCTURED TAILORING, DRAPED SILKS, AND MODERN SILHOUETTES.</p>
           <span class="explore-link">DISCOVER LINE</span>
         </div>
       </a>
 
-      <!-- Category 2 -->
+      <!-- Men -->
       <a href="new-arrivals.html" class="collection-card">
-        <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=1000&auto=format&fit=crop" alt="Statement Dresses">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1000&auto=format&fit=crop" alt="Men's Collection">
         <div class="collection-overlay">
-          <h3>STATEMENT DRESSES</h3>
-          <p>DRAPED SILKS, MINIMALIST CUTS, AND EVENING DRAPE.</p>
+          <h3>MENSWEAR</h3>
+          <p>ARCHITECTURAL SUITS, SHIRTS, AND ELEVATED OUTERWEAR.</p>
           <span class="explore-link">DISCOVER LINE</span>
         </div>
       </a>
 
-      <!-- Category 3 -->
+      <!-- Children -->
       <a href="new-arrivals.html" class="collection-card">
-        <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=1000&auto=format&fit=crop" alt="Matching Sets">
+        <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?q=80&w=1000&auto=format&fit=crop" alt="Children's Collection">
         <div class="collection-overlay">
-          <h3>MATCHING SETS</h3>
-          <p>ELEVATED TWO-PIECE ENSEMBLES FOR EFFORTLESS STYLING.</p>
+          <h3>CHILDREN</h3>
+          <p>MINIATURE SILHOUETTES CRAFTED WITH PREMIUM COMFORT AND TAILORED DETAILING.</p>
           <span class="explore-link">DISCOVER LINE</span>
         </div>
       </a>
 
-      <!-- Category 4 -->
+      <!-- Bags & Accessories -->
       <a href="new-arrivals.html" class="collection-card">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop" alt="The Runway Capsule">
+        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=1000&auto=format&fit=crop" alt="Bags and Accessories">
         <div class="collection-overlay">
-          <h3>AUTUMN / WINTER '26 CAPSULE</h3>
-          <p>LIMITED-RUN PIECES DEFINED BY HIGH-CONTRAST TAILORING.</p>
+          <h3>BAGS & ACCESSORIES</h3>
+          <p>STRUCTURED LEATHER GOODS, SCULPTURAL JEWELRY, AND STATEMENT ACCENTS.</p>
+          <span class="explore-link">DISCOVER LINE</span>
+        </div>
+      </a>
+
+      <!-- Autumn / Winter '26 Capsule -->
+      <a href="new-arrivals.html" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop" alt="Autumn / Winter '26 Capsule">
+        <div class="collection-overlay">
+          <h3>AUTUMN / WINTER '26</h3>
+          <p>LIMITED-RUN STATEMENT PIECES DEFINED BY HIGH-CONTRAST TAILORING.</p>
+          <span class="explore-link">DISCOVER CAPSULE</span>
+        </div>
+      </a>
+
+      <!-- The Resort Line -->
+      <a href="new-arrivals.html" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=1000&auto=format&fit=crop" alt="The Resort Line">
+        <div class="collection-overlay">
+          <h3>THE RESORT LINE</h3>
+          <p>LIGHTWEIGHT LINENS, EFFORTLESS DRAPES, AND VACATION SILHOUETTES.</p>
           <span class="explore-link">DISCOVER LINE</span>
         </div>
       </a>
